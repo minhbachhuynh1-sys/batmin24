@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vợ Ngốc Hương Lan ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff8fb1,#ffc4d6,#ffdceb,#ffeef5);
+background-size:400% 400%;
+animation:bg 10s infinite;
+}
+@keyframes bg{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+.box{
+width:360px;
+background:#ffffffdd;
+padding:20px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px #ff69b4;
+z-index:2;
+}
+h1{color:#ff1493}
+#clock{
+font-size:42px;
+margin:15px 0;
+font-weight:bold;
+}
+#msg{
+font-size:22px;
+color:#e91e63;
+min-height:70px;
+}
+button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#ff69b4;
+color:white;
+cursor:pointer;
+}
+.heart{
+position:fixed;
+bottom:-30px;
+font-size:20px;
+animation:fly linear forwards;
+pointer-events:none;
+}
+@keyframes fly{
+to{
+transform:translateY(-110vh) rotate(360deg);
+opacity:0;
+}
+}
+.pixel{
+position:fixed;
+right:20px;
+bottom:20px;
+width:140px;
+image-rendering:pixelated;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h1>💕 Vợ Ngốc Hương Lan 💕</h1>
+
+<div id="clock"></div>
+
+<div id="msg">💖 Chưa có lời nhắn</div>
+
+<button onclick="document.getElementById('music').play()">🎵 Bật nhạc</button>
+
+</div>
+
+<img src="pixel.png" class="pixel">
+
+<audio id="music" loop>
+<source src="Tuyển Tập SOOBIN _ Xin Đừng Lặng Im, Nếu Ngày Ấy, Anh Đã Quen Với... - Những Bài Hát Hay Của Soobin.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function update(){
+
+let d=new Date();
+
+let h=d.getHours();
+
+let m=d.getMinutes();
+
+let s=d.getSeconds();
+
+clock.innerHTML=
+String(h).padStart(2,"0")+":"+
+String(m).padStart(2,"0")+":"+
+String(s).padStart(2,"0");
+
+let t="💖 Chưa có lời nhắn";
+
+if(h==7)t="🌞 Dậy đi vợ ngốc ❤️";
+
+if(h==8)t="🥐 Em nhớ ăn sáng nha ❤️";
+
+if(h==13)t="😴 Em ngủ dậy chưa vợ ngốc";
+
+if(h==19)t="📚 Em học bài đi nha ❤️";
+
+if(h==22)t="🥰 Em học xong chưa ";
+
+if(h==23)t="☎️ emm vào việc đi hihi ❤️";
+
+msg.innerHTML=t;
+
+}
+
+setInterval(update,1000);
+
+update();
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(15+Math.random()*20)+"px";
+
+h.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),8000);
+
+},300);
+
+</script>
+
+</body>
+</html>
